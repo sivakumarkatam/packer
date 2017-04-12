@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Sample Deployment using GitHub</title>
-  <style>
-    body {
-      color: #ffffff;
-      background-color: #6699ff;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
-    h1 {
-      font-size: 500%;
-      font-weight: normal;
-      margin-bottom: 0;
-    }
-    h2 {
-      font-size: 200%;
-      font-weight: normal;
-      margin-bottom: 0;
-    }
-    a {
-      color: #ffffff;
-    }
-  </style>
-</head>
-<body>
-  <div align="center">
-    <h1>Congratulations</h1>
-    <h2>This application was deployed using GitHub.</h2>
-    <p>For next steps, read the <a href="http://aws.amazon.com/documentation/codedeploy">AWS CodeDeploy Documentation</a>.</p>
-  </div>
-</body>
+    <head>
+        <title>Web Form</title>
+        <link rel='stylesheet' type='text/css' href='stylesheet.css'/>
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div id="header"><h1>Contact Us!</h1></div>
+        <div id="wrapper">
+            <div id="inputs">
+                <form name="input" action="#" method="post">
+            	    First name: <input type="text" name="firstname" value="first name"><br/>
+            	    Last name: <input type="text" name="lastname" value="last name"><br/>
+            	    E-mail: <input type="email" name="email" value="e-mail address"><br/><br/>
+                </form>
+            </div>
+            <div>
+                <form id="options">
+                    Message: <br/><textarea name="msg"></textarea><br/>
+                    <p>Sex:</p>
+                    <input type="radio" name="sex" value="male">Male
+                    <input type="radio" name="sex" value="female">Female<br/><br/>
+                    <input type="checkbox" name="notify" value="updates" checked>I'd like to receive notices when this website updates.<br/>
+                    <input type="checkbox" name="notify" value="services">I'd like to receive notices pertaining to related websites and their services.<br/><br/> 
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </body>
 </html>
