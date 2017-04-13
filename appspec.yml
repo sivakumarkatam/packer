@@ -7,7 +7,7 @@ files:
     destination: /var/www/html/
 hooks:
   BeforeInstall:
-    - location: scripts/before_install
+    - location: scripts/before_start
       timeout: 300
       runas: root
     - location: scripts/start_server
