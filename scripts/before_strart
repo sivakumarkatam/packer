@@ -1,0 +1,2 @@
+sudo rm -rf /var/wwww/html/*
+sudo service appache2 stop
