@@ -1,2 +1,2 @@
 sudo rm -rf /var/wwww/html/*
-sudo service appache2 stop
+sudo service apache2 stop
