@@ -1,1 +1,2 @@
+sudo rm -rf /var/wwww/html/index.html
 sudo service apache2 start
