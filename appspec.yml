@@ -9,7 +9,7 @@ hooks:
   BeforeInstall:
     - location: scripts/before_strart
       timeout: 300
-      runas: root
+      runas: ubuntu
     - location: scripts/start_server
       timeout: 300
-      runas: root
+      runas: ubuntu
