@@ -1,3 +1,0 @@
-cd /var/www/html/
-sudo rm -rf index.html code.css
-sudo service apache2 stop
