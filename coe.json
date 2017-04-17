@@ -5,7 +5,7 @@
 "builders": [{
   "type": "amazon-ebs",
   "region": "{{user `region`}}",
-  "source_ami": "ami-f4cc1de2",
+  "source_ami": "ami-80861296",
   "instance_type": "t2.micro",
   "vpc_id": "{{user `vpc-id`}}",
   "subnet_id": "{{user `subnet-id`}}",
