@@ -1,4 +1,7 @@
 {
+  "variables": {
+    "name": "jenkins-packer-agent",
+  },
 "builders": [{
   "type": "amazon-ebs",
   "region": "{{user `region`}}",
