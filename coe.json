@@ -1,8 +1,5 @@
 {
-  "variables": {
-    "name": "jenkins-packer-agent"
-  },
-"builders": [{
+ "builders": [{
   "type": "amazon-ebs",
   "region": "{{user `region`}}",
   "source_ami": "ami-80861296",
