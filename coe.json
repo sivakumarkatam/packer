@@ -4,8 +4,8 @@
   "region": "{{user `region`}}",
   "source_ami": "ami-80861296",
   "instance_type": "t2.micro",
-  "vpc_id": "{{user `vpc-id`}}",
-  "subnet_id": "{{user `subnet-id`}}",
+  "vpc_id": "{{user `vpcid`}}",
+  "subnet_id": "{{user `subnetid`}}",
   "ssh_username": "ubuntu",
   "ami_name": "packer-coe {{timestamp}}",
   "tags": {
