@@ -1,13 +1,13 @@
 {
  "builders": [{
   "type": "amazon-ebs",
-  "region": "{{user `region`}}",
+  "region": "",
   "source_ami": "ami-80861296",
   "instance_type": "t2.micro",
-  "vpc_id": "{{user `vpcid`}}",
-  "subnet_id": "{{user `subnetid`}}",
+  "vpc_id": "",
+  "subnet_id": "",
   "ssh_username": "ubuntu",
-  "ami_name": "packer-coe {{timestamp}}",
+  "ami_name": "packer-coe{{timestamp}}",
   "tags": {
   "Application": "DevOps",
   "Description": "demo for packer",
