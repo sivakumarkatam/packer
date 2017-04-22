@@ -1,4 +1,9 @@
 {
+ "variables": {
+    "region": "",
+    "vpc_id": "",
+    "subnet_id": ""
+  },
  "builders": [{
   "type": "amazon-ebs",
   "region": "",
