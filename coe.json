@@ -1,16 +1,16 @@
 {
  "variables": {
-    "region": "",
-    "vpc_id": "",
-    "subnet_id": ""
+    "aws-region": "",
+    "aws-vpc_id": "",
+    "aws-subnet_id": ""
   },
  "builders": [{
   "type": "amazon-ebs",
-  "region": "",
+  "region": "{{user `aws-region`}}",
   "source_ami": "ami-80861296",
   "instance_type": "t2.micro",
-  "vpc_id": "",
-  "subnet_id": "",
+  "vpc_id": "{{user `aws-vpc_id`}}",
+  "subnet_id": "{{user `aws-subnet_id`}}",
   "ssh_username": "ubuntu",
   "ami_name": "packer-coe{{timestamp}}",
   "tags": {
