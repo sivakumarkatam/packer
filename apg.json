@@ -1,0 +1,34 @@
+{
+ "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": "",  
+    "aws-region": "",
+    "aws-vpc_id": "",
+    "aws-subnet_id": ""
+  },
+ "builders": [{
+  "type": "amazon-ebs",
+  "access_key": "{{user `aws_access_key`}}",
+  "secret_key": "{{user `aws_secret_key`}}",
+  "region": "{{user `aws-region`}}",
+  "source_ami": "ami-002d0652",
+  "instance_type": "t2.micro",
+  "vpc_id": "{{user `aws-vpc_id`}}",
+  "subnet_id": "{{user `aws-subnet_id`}}",
+  "ssh_username": "ubuntu",
+  "ami_name": "packer-coe{{timestamp}}",
+  "tags": {
+  "Name": "COEami",
+  "Application": "DevOps",
+  "Description": "demo for packer",
+  "Donotstop": "true",
+  "Owner-Email": "siva.katam@blazeclan.com",
+  "ProjectCode": "demo code"
+}
+}],
+"provisioners": [{
+  "type": "shell",
+  "script": "script.sh",
+  "pause_before": "10s"
+}]
+}
