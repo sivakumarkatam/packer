@@ -2,3 +2,11 @@
 sudo apt-get update
 sudo apt-get install default-jdk -y
 sudo apt-get install nginx -y
+sudo apt-get install awscli
+sudo apt-get install ruby -y
+sudo apt-get install wget
+cd /home/ubuntu
+wget https://aws-codedeploy-ap-southeast-1.s3.amazonaws.com/latest/install
+chmod +x ./install
+sudo ./install auto
+sudo service codedeploy-agent start
