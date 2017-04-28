@@ -11,19 +11,15 @@
   "access_key": "{{user `aws_access_key`}}",
   "secret_key": "{{user `aws_secret_key`}}",
   "region": "{{user `aws-region`}}",
-  "source_ami": "ami-002d0652",
+  "source_ami": "ami-f068a193",
   "instance_type": "t2.micro",
   "vpc_id": "{{user `aws-vpc_id`}}",
   "subnet_id": "{{user `aws-subnet_id`}}",
-  "ssh_username": "ubuntu",
-  "ami_name": "packer-coe{{timestamp}}",
+  "ssh_username": "centos",
+  "ami_name": "packer-apg{{timestamp}}",
   "tags": {
-  "Name": "COEami",
-  "Application": "DevOps",
-  "Description": "demo for packer",
-  "Donotstop": "true",
-  "Owner-Email": "siva.katam@blazeclan.com",
-  "ProjectCode": "demo code"
+  "Name": "APGami",
+  "Application": "DevOps"
 }
 }],
 "provisioners": [{
