@@ -15,7 +15,7 @@
   "instance_type": "t2.micro",
   "vpc_id": "{{user `aws-vpc_id`}}",
   "subnet_id": "{{user `aws-subnet_id`}}",
-  "ssh_username": "centos",
+  "ssh_username": "root",
   "ami_name": "packer-apg{{timestamp}}",
   "tags": {
   "Name": "unicornAMI",
