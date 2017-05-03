@@ -10,4 +10,4 @@
 #chmod +x ./install
 #sudo ./install auto
 #sudo service codedeploy-agent start
-echo "this is userdata"
+echo "this is userdata for launch configuration"
