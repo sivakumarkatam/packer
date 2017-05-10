@@ -12,7 +12,8 @@ sudo ./install auto
 sudo service codedeploy-agent start
 sudo apt-get install python3 -y
 wget https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
-sudo python ./awslogs-agent-setup.py -c /home/ubuntu/packer/conf -r ap-southeast-1 -n
+chmod +x awslogs-agent-setup.py
+sudo ./awslogs-agent-setup.py -c /home/ubuntu/packer/conf -r ap-southeast-1 -n
 cd /etc/systemd/system
 sudo cp /home/ubuntu/packer/ser /etc/systemd/system/awslogs.service
 sudo systemctl start awslogs.service
