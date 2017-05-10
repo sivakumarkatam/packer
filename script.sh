@@ -15,6 +15,28 @@ cd /home/ubuntu
 wget https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
 chmod +x awslogs-agent-setup.py
 pwd
+echo '[general]
+state_file = /var/awslogs/state/agent-state  
+ 
+[/var/log/messages]
+file = /var/log/messages
+log_group_name = /var/log/messages
+log_stream_name = {instance_id}
+datetime_format = %b %d %H:%M:%S' >> conf
+echo '[Unit]
+Description=Service for CloudWatch Logs agent
+After=rc-local.service
+
+[Service]
+Type=simple
+Restart=always
+KillMode=process
+TimeoutSec=infinity
+PIDFile=/var/awslogs/state/awslogs.pid
+ExecStart=/var/awslogs/bin/awslogs-agent-launcher.sh --start --background --pidfile $PIDFILE --user awslogs --chuid awslogs &
+
+[Install]
+WantedBy=multi-user.target' >> serv
 #sudo cp /home/ubuntu/packer/conf /home/ubuntu/config
 #sudo cp /home/ubuntu/packer/ser /home/ubuntu/serv
 sudo python3 ./awslogs-agent-setup.py -c config -r ap-southeast-1 -n
