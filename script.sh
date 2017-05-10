@@ -15,7 +15,9 @@ cd /home/ubuntu
 wget https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
 chmod +x awslogs-agent-setup.py
 pwd
-sudo python3 ./awslogs-agent-setup.py -c /home/ubuntu/packer/conf -r ap-southeast-1 -n
+sudo cp /home/ubuntu/packer/conf /home/ubuntu/conf
+sudo cp /home/ubuntu/packer/ser /home/ubuntu/ser
+sudo python3 ./awslogs-agent-setup.py -c /home/ubuntu/conf -r ap-southeast-1 -n
 cd /etc/systemd/system
-sudo cp /home/ubuntu/packer/ser /etc/systemd/system/awslogs.service
+sudo cp /home/ubuntu/ser /etc/systemd/system/awslogs.service
 sudo systemctl start awslogs.service
