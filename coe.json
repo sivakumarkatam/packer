@@ -18,12 +18,8 @@
   "ssh_username": "ubuntu",
   "ami_name": "packer-coe{{timestamp}}",
   "tags": {
-  "Name": "COEami",
-  "Application": "DevOps",
-  "Description": "demo for packer",
-  "Donotstop": "true",
-  "Owner-Email": "siva.katam@blazeclan.com",
-  "ProjectCode": "demo code"
+  "Name": "APGami",
+  "Application": "DevOps"
 }
 }],
 "provisioners": [{
