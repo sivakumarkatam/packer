@@ -16,7 +16,7 @@
   "vpc_id": "{{user `aws-vpc_id`}}",
   "subnet_id": "{{user `aws-subnet_id`}}",
   "ssh_username": "ubuntu",
-  "ami_name": "packer-coe{{timestamp}}",
+  "ami_name": "APG-AMI",
   "tags": {
   "Name": "APGami",
   "Application": "DevOps"
