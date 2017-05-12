@@ -19,8 +19,8 @@ echo '[general]
 state_file = /var/awslogs/state/agent-state  
  
 [/var/log/messages]
-file = /var/log/messages
-log_group_name = /var/log/messages
+file = /var/log/syslog
+log_group_name = vi /var/log/syslog
 log_stream_name = {instance_id}
 datetime_format = %b %d %H:%M:%S' >> conf
 echo '[Unit]
