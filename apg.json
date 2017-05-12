@@ -17,7 +17,7 @@
   "vpc_id": "{{user `aws-vpc_id`}}",
   "subnet_id": "{{user `aws-subnet_id`}}",
   "ssh_username": "centos",
-  "ami_name": "packer-apg{{timestamp}}",
+  "ami_name": "Unicorn-AMI",
   "tags": {
   "Name": "unicornAMI",
   "Application": "DevOps"
