@@ -20,7 +20,7 @@
   "ssh_username": "ubuntu",
   "ami_name": "Unicorn-Broadcasting-AMI",
   "tags": {
-  "Name": "APGami",
+  "Name": "Unicorn-Broadcasting",
   "Application": "DevOps"
 }
 }],
