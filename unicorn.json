@@ -25,7 +25,7 @@
 }],
 "provisioners": [{
   "type": "shell",
-  "script": "apgscript.sh",
+  "script": "unicornscript.sh",
   "pause_before": "10s"
 }]
 }
