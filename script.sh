@@ -18,11 +18,14 @@ pwd
 #echo '[general]
 state_file = /var/awslogs/state/agent-state  
  
-[/var/log/messages]
-file = /var/log/syslog
-log_group_name = vi /var/log/syslog
+[/var/log/nginx/error.log]
+
+datetime_format = %Y/%m/%d %H:%M:%S
+file = /var/log/nginx/error.log
+buffer_duration = 5000
 log_stream_name = {instance_id}
-datetime_format = %b %d %H:%M:%S' >> conf
+initial_position = end_of_file
+log_group_name = /var/log/nginx/error.log' >> conf
 #echo '[Unit]
 Description=Service for CloudWatch Logs agent
 After=rc-local.service
