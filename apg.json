@@ -28,5 +28,16 @@
   "type": "shell",
   "script": "script.sh",
   "pause_before": "10s"
-}]
+},
+ {
+  "type": "file",
+  "source": "/home/ubuntu/config",
+  "destination": "/tmp"
+},
+{
+  "type": "file",
+  "source": "/home/ubuntu/serv",
+  "destination": "/tmp"
+}
+ ]
 }
