@@ -13,6 +13,7 @@
   "secret_key": "{{user `aws_secret_key`}}",
   "token": "{{user `aws_session_token`}}",
   "region": "{{user `aws-region`}}",
+  "disable_stop_instance": "false",
   "source_ami": "ami-8fcc75ec",
   "instance_type": "t2.micro",
   "vpc_id": "{{user `aws-vpc_id`}}",
