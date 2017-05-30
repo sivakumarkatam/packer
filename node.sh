@@ -1,6 +1,6 @@
-sudo yum install -y epel-release wget rpm nodejs npm awscli ruby python
-#sudo yum -y install nodejs
-#sudo yum -y install npm
+sudo yum install -y epel-release wget rpm awscli ruby python
+sudo yum -y install nodejs
+sudo yum -y install npm
 sudo npm install pm2 -g
 pm2 startup
 
