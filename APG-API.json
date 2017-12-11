@@ -11,6 +11,7 @@
  
 "builders": [{
   "type": "amazon-ebs",
+  "ssh_pty": "true",
   "access_key": "{{user `aws_access_key`}}",
   "secret_key": "{{user `aws_secret_key`}}",
   "token": "{{user `aws_session_token`}}",
@@ -19,7 +20,7 @@
   "instance_type": "t2.micro",
   "vpc_id": "{{user `aws-vpc_id`}}",
   "subnet_id": "{{user `aws-subnet_id`}}",
-  "ssh_username": "ubuntu",
+  "ssh_username": "centos",
   "ami_name": "APG-AMI {{isotime \"2006-01-02\"}}",
   "tags": {
   "Name": "APG-AMI",
