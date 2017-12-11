@@ -77,6 +77,7 @@ sudo service awslogs start
 sudo systemctl restart awslogs.service
 sudo systemctl enable awslogs.service
 sudo systemctl start awslogs.service
+sudo systemctl restart awslogs.service
 cd /tmp/
 sudo yum install perl-Switch perl-DateTime perl-Sys-Syslog perl-LWP-Protocol-https perl-Digest-SHA -y
 #sudo yum install zip unzip -y
