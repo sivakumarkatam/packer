@@ -21,7 +21,7 @@
   "vpc_id": "{{user `aws-vpc_id`}}",
   "subnet_id": "{{user `aws-subnet_id`}}",
   "ssh_username": "centos",
-  "ami_name": "APG-AMI {{isotime \"2006-01-02\"}}",
+  "ami_name": "APG-AMI2 {{isotime \"2006-01-02\"}}",
   "tags": {
   "Name": "APG-AMI",
   "Application": "DevOps"
