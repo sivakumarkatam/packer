@@ -15,7 +15,7 @@
   "secret_key": "{{user `aws_secret_key`}}",
   "token": "{{user `aws_session_token`}}",
   "region": "{{user `aws-region`}}",
-  "source_ami": "ami-8fcc75ec",
+  "source_ami": "ami-0a9cd469",
   "instance_type": "t2.micro",
   "vpc_id": "{{user `aws-vpc_id`}}",
   "subnet_id": "{{user `aws-subnet_id`}}",
@@ -29,6 +29,7 @@
 "provisioners": [{
   "type": "shell",
   "script": "APG-APIscript.sh",
+  "execute_command": "echo '{{user `ssh_pass`}}' | {{ .Vars }} sudo -S -E sh '{{ .Path }}'",
   "pause_before": "10s"
 }
 ]
