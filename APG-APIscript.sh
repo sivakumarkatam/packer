@@ -54,7 +54,7 @@ file = /var/log/unicorn/ui.log
 buffer_duration = 5000
 log_stream_name = UI-Debuglogs
 initial_position = end_of_file
-log_group_name = $env-UNICORN-UI-logs" >> /tmp/config
+log_group_name = $env-UNICORN-UI-logs" >> /tmp/conf
 
 #echo '[Unit]
 #Description=Service for CloudWatch Logs agent
@@ -69,7 +69,7 @@ log_group_name = $env-UNICORN-UI-logs" >> /tmp/config
 #[Install]
 #WantedBy=multi-user.target' >> /home/centos/serv
 
-sudo ./awslogs-agent-setup.py -c /tmp/config -r ap-southeast-1 -n
+sudo ./awslogs-agent-setup.py -c /tmp/conf -r ap-southeast-1 -n
 #cd /etc/systemd/system
 #sudo cp /home/centos/serv /etc/systemd/system/awslogs.service
 sudo systemctl daemon-reload
