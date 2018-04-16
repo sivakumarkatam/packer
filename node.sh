@@ -14,6 +14,7 @@ sudo yum install -y wget curl vim zip
 
 sleep 10
 az=`curl http://169.254.169.254/latest/meta-data/placement/availability-zone/`
+sudo mkdir -p /var/www/magento2/pub/media
 
 #echo "AZ is: $az"
 sleep 5
