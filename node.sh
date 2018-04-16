@@ -1,49 +1,49 @@
-sudo yum install -y epel-release wget rpm awscli ruby python
-sudo yum -y install nodejs
-sudo yum -y install npm
-sudo npm install pm2 -g
-pm2 startup
+#!/bin/bash
 
 
+sudo wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm &&  rpm -ivh epel-release-latest-7.noarch.rpm
 
+sudo echo '[gluster38]
+name=Gluster 3.8
+baseurl=http://mirror.centos.org/centos/7/storage/$basearch/gluster-3.8/
+gpgcheck=0
+enabled=1' >  /etc/yum.repos.d/Gluster.repo
+sudo yum install -y centos-release-gluster
+sudo yum install -y glusterfs-client
+sudo yum install -y wget curl vim zip
 
-cd /home/centos
-wget https://aws-codedeploy-ap-southeast-1.s3.amazonaws.com/latest/install
-chmod +x ./install
-sudo ./install auto
-sudo systemctl start codedeploy-agent
+sleep 10
+az=`curl http://169.254.169.254/latest/meta-data/placement/availability-zone/`
 
-cd /home/centos
-wget https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
-chmod +x awslogs-agent-setup.py
-pwd
+#echo "AZ is: $az"
+sleep 5
 
-echo '[general]
-state_file = /var/awslogs/state/agent-state  
- 
-[/var/log/nginx/error.log]
+if [ "$az" == "ap-southeast-1a" ]
+ then
+sudo mount -t glusterfs -o context=system_u:object_r:httpd_sys_rw_content_t:s0  gfs1.unicorn.cloud:/gv0 /var/www/magento2/pub/media/
 
-datetime_format = %Y/%m/%d %H:%M:%S
-file = /var/log/nginx/error.log
-buffer_duration = 5000
-log_stream_name = unicorn-UI
-initial_position = end_of_file
-log_group_name = /var/log/nginx/error.log' >> conf
+#sudo mount -t glusterfs gfs1.unicorn.cloud:/gv0 /var/www/magento2/pub/media/
 
-echo '[Unit]
-Description=Service for CloudWatch Logs agent
-After=rc-local.service
-[Service]
-Type=simple
-Restart=always
-KillMode=process
-TimeoutSec=infinity
-PIDFile=/var/awslogs/state/awslogs.pid
-ExecStart=/var/awslogs/bin/awslogs-agent-launcher.sh --start --background --pidfile $PIDFILE --user awslogs --chuid awslogs &
-[Install]
-WantedBy=multi-user.target' >> serv
+echo "AZ is: $az"
+#echo 'gfs1.unicorn.cloud:/gv0 /var/www/magento2/pub/media glusterfs defaults,_netdev backupvolfile-server=gfs2.unicron.cloud   0 0' >> /etc/fstab
+ABC=`sudo mount -t glusterfs -o context=system_u:object_r:httpd_sys_rw_content_t:s0  gfs1.unicorn.cloud:/gv0 /var/www/magento2/pub/media/`
+echo "$ABC"
+elif [ "$az" == "ap-southeast-1b" ]
+ then
+#ABC=`sudo mount -t glusterfs -o context=system_u:object_r:httpd_sys_rw_content_t:s0  gfs2.unicorn.cloud:/gv0 /var/www/magento2/pub/media/`
+#sudo mount -t glusterfs gfs1.unicorn.cloud:/gv0 /var/www/magento2/pub/media/
+echo "ABC"
+echo "AZ is: $az"
 
-sudo ./awslogs-agent-setup.py -c conf -r ap-southeast-1 -n
-cd /etc/systemd/system
-sudo cp /home/centos/serv /etc/systemd/system/awslogs.service
-sudo systemctl start awslogs.service
+elif [ "$az" == "ap-southeast-1c" ]
+ then
+#sudo mount -t glusterfs -o context=system_u:object_r:httpd_sys_rw_content_t:s0  gfs3.unicorn.cloud:/gv0 /var/www/magento2/pub/media/
+#sudo mount -t glusterfs gfs1.unicorn.cloud:/gv0 /var/www/magento2/pub/media/
+echo "AZ is: $az"
+else
+
+exit 1
+
+fi
+sudo chcon -R -t httpd_sys_rw_content_t /var/www/magento2/
+sudo df -h
