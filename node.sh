@@ -3,11 +3,11 @@
 
 sudo wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm &&  rpm -ivh epel-release-latest-7.noarch.rpm
 
-sudo echo '[gluster38]
-name=Gluster 3.8
-baseurl=http://mirror.centos.org/centos/7/storage/$basearch/gluster-3.8/
-gpgcheck=0
-enabled=1' >  /etc/yum.repos.d/Gluster.repo
+#sudo echo '[gluster38]
+#name=Gluster 3.8
+#baseurl=http://mirror.centos.org/centos/7/storage/$basearch/gluster-3.8/
+#gpgcheck=0
+#enabled=1' >  /etc/yum.repos.d/Gluster.repo
 sudo yum install -y centos-release-gluster
 sudo yum install -y glusterfs-client
 sudo yum install -y wget curl vim zip
